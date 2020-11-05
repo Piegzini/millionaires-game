@@ -1,22 +1,94 @@
 $bacgroung-c: #130f40
 $font-c: #dff9fb
-    
+
+
+@mixin flex($direction, $justify)
+    display: flex
+    flex-direction: $direction
+    justify-content: $justify
+    align-items: center
+     
 * 
     margin: 0 
     box-sizing: border-box 
     font-family: 'Montserrat',sans-serif
 
-div 
-    &#contener 
-        width: 100vw 
-        height: 100vh 
-        min-width: 1000px 
-        background: $bacgroung-c
+
+body 
+    background: $bacgroung-c
+
+#contener 
+    @include flex(column, space-around)
+    width: 100vw 
+    height: 60vh 
 
     h1 
-        margin: auto
+        text-align: center
+        display: block
         height: 40px
         width:  500px
         font-weight: 500
-        display: block
         color: $font-c
+
+.userNameForm
+    @include flex(column, space-around)
+    width: 275px
+    height: 300px
+    background: #dff9fb
+    border-radius: 25px
+    position: relative
+
+    .input
+        width: 100% 
+        @include flex(column, space-around)
+        height: 120px
+        input
+            width: 80%
+            border: none
+            color: #30336b
+            padding-top: 20px 
+            outline: none 
+            font-size: 20px
+            border-bottom: 2px #4834d4 solid
+            background-color: #dff9fb 
+
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover, 
+            &:-webkit-autofill:focus, 
+            &:-webkit-autofill:active  
+                -webkit-box-shadow: 0 0 0 30px #dff9fb inset !important
+                -webkit-text-fill-color: #30336b !important
+                font-size: 20px !important
+
+
+            &:-webkit-autofill::first-line 
+                font-size: 20px
+            
+
+        label
+            text-transform: uppercase
+            font-size: 21px 
+            color: #4834d4
+
+    p 
+        display: block 
+        width: 100%
+        text-align: center
+        color: #30336b
+        font-size: 16px
+    button
+        margin-bottom: 15px
+        width: 60%
+        height: 12%
+        border: none
+        border-radius: 20px
+        background-color: #686de0
+        transition: 0.3s
+        color: $font-c
+        text-transform: uppercase
+        outline: none 
+        font-size: 14px
+        &:hover
+            background-color: #4834d4
+
+   
